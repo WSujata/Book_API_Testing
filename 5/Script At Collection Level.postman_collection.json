@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "177ce5d7-ce21-4c6b-90fd-fb2ebe9953b3",
+		"name": "Script At Collection Level",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26708283"
+	},
+	"item": [
+		{
+			"name": "My Folder",
+			"item": [
+				{
+					"name": "GET Request",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.log('Pre-request script at Request level');"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log('Test script at Request level');"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.google.com/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"google",
+								"com"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"console.log('Pre-request script at Folder level');"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"console.log('Test script at Folder level');"
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"console.log('Pre-request script at collection level');"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"console.log('Test script at collection level');"
+				]
+			}
+		}
+	]
+}

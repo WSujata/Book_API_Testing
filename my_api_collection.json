@@ -1,0 +1,58 @@
+
+  "collection": {
+    "info": {
+      "name": "My API Collection",
+      "description": "A collection of HTTP requests for my API"
+    },
+    "item": [
+      {
+        "name": "GET Request Example",
+        "request": {
+          "url": "https://api.example.com/resource",
+          "method": "GET"
+        }
+      },
+      {
+        "name": "POST Request Example",
+        "request": {
+          "url": "https://api.example.com/resource",
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\"key\": \"value\"}"
+          }
+        }
+      },
+      {
+        "name": "PUT Request Example",
+        "request": {
+          "url": "https://api.example.com/resource/1",  // Replace with the specific resource ID
+          "method": "PUT",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\"updated_key\": \"updated_value\"}"
+          }
+        }
+      },
+      {
+        "name": "DELETE Request Example",
+        "request": {
+          "url": "https://api.example.com/resource/1",  // Replace with the specific resource ID
+          "method": "DELETE"
+        }
+      }
+    ]
+  }
+}

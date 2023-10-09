@@ -1,0 +1,330 @@
+{
+	"info": {
+		"_postman_id": "1ad278e0-98ad-4dee-85af-0b0a83986c77",
+		"name": "Authentications",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26708283"
+	},
+	"item": [
+		{
+			"name": "OAuth_1_OAuth_2",
+			"item": [
+				{
+					"name": "Step-1 Request a user's GitHub Identity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://github.com/settings/applications/2313345?client_id=af374910f143557a7799",
+							"protocol": "https",
+							"host": [
+								"github",
+								"com"
+							],
+							"path": [
+								"settings",
+								"applications",
+								"2313345"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "af374910f143557a7799"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step-2 User are redirected back to your site by GitHub",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://github.com/settings/applications/2313345?client_id=af374910f143557a7799&client_secret=8f560b7b986ab6e12c680ebe194d932d1d765dd0&code=af374910f143557a7799",
+							"protocol": "https",
+							"host": [
+								"github",
+								"com"
+							],
+							"path": [
+								"settings",
+								"applications",
+								"2313345"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "af374910f143557a7799"
+								},
+								{
+									"key": "client_secret",
+									"value": "8f560b7b986ab6e12c680ebe194d932d1d765dd0"
+								},
+								{
+									"key": "code",
+									"value": "af374910f143557a7799"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step 3 - use this access token to access the API List specific user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://github.com/settings/applications/2313345?client_id=af374910f143557a7799&client_secret=8f560b7b986ab6e12c680ebe194d932d1d765dd0&code=af374910f143557a7799",
+							"protocol": "https",
+							"host": [
+								"github",
+								"com"
+							],
+							"path": [
+								"settings",
+								"applications",
+								"2313345"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "af374910f143557a7799"
+								},
+								{
+									"key": "client_secret",
+									"value": "8f560b7b986ab6e12c680ebe194d932d1d765dd0"
+								},
+								{
+									"key": "code",
+									"value": "af374910f143557a7799"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step 4 - use this access token to access the API List all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://github.com/users",
+							"protocol": "https",
+							"host": [
+								"github",
+								"com"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Basic Authentication",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "postman",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/basic-auth",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"basic-auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bearer Token Auth GithHub",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://github.com/SujataW1094?tab=repositories",
+					"protocol": "https",
+					"host": [
+						"github",
+						"com"
+					],
+					"path": [
+						"SujataW1094"
+					],
+					"query": [
+						{
+							"key": "tab",
+							"value": "repositories"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Key Auth",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "appid",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/forecast/daily?q=Delhi&units=metric&cnt=7",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"forecast",
+						"daily"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Delhi"
+						},
+						{
+							"key": "units",
+							"value": "metric"
+						},
+						{
+							"key": "cnt",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Digest Auth",
+			"request": {
+				"auth": {
+					"type": "digest",
+					"digest": [
+						{
+							"key": "disableRetryRequest",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "postman",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "MD5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/digest-auth",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"digest-auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Basic Auth",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://the-internet.herokuapp.com/basic_auth",
+					"protocol": "http",
+					"host": [
+						"the-internet",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"basic_auth"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

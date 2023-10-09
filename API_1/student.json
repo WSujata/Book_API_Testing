@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "cources": [
+        "C",
+        "C++"
+      ],
+      "phone": "123456",
+      "name": "France",
+      "location": "France",
+      "id": 2
+    },
+    {
+      "cources": [
+        "C",
+        "C++"
+      ],
+      "phone": "123456",
+      "name": "Scott",
+      "location": "France",
+      "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

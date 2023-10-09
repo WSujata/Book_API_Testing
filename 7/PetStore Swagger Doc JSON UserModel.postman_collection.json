@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "acb30b85-6254-4a5b-af61-1a809fe41715",
+		"name": "PetStore Swagger Doc JSON UserModel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26708283"
+	},
+	"item": [
+		{
+			"name": "Export api in swagger doc & import in postman",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json; v=1.0"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; v=1.0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":0,\"title\":\"string\",\"dueDate\":\"2023-09-07T04:43:12.613Z\",\"completed\":true}"
+				},
+				"url": {
+					"raw": "https://fakerestapi.azurewebsites.net/api/v1/Activities",
+					"protocol": "https",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Activities"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

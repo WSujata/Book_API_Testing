@@ -1,0 +1,158 @@
+{
+  "Student": [
+    {
+      "id": 1,
+      "name": "John",
+      "location": "India",
+      "phone": "1234567890",
+      "courses": [
+        "java",
+        "Selenium"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "kim",
+      "location": "US",
+      "phone": "3456789876",
+      "courses": [
+        "python",
+        "appium"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "smith",
+      "location": "canada",
+      "phone": "9876543213",
+      "courses": [
+        "c#",
+        "RestAPI"
+      ]
+    },
+    {
+      "courses": [
+        "C",
+        "C++"
+      ],
+      "phone": "123456",
+      "name": "Scott",
+      "location": "France",
+      "id": 5
+    },
+    {
+      "courses": [
+        "C",
+        "C++"
+      ],
+      "phone": "123456",
+      "name": "Scott",
+      "location": "France",
+      "id": 6
+    },
+    {
+      "courses": [
+        "C",
+        "C++"
+      ],
+      "phone": "123456",
+      "name": "Scott",
+      "location": "France",
+      "id": 7
+    },
+    {
+      "empty": false,
+      "id": 8
+    },
+    {
+      "courses": [
+        "C",
+        "C++"
+      ],
+      "phone": "123456",
+      "name": "Scott",
+      "location": "France",
+      "id": 9
+    },
+    {
+      "name": "Scott",
+      "location": "France",
+      "phone": "123456",
+      "cources": [
+        "C",
+        "C++"
+      ],
+      "id": 13
+    },
+    {
+      "cources": [
+        "C",
+        "C++"
+      ],
+      "phone": "123456",
+      "name": "Scott",
+      "location": "France",
+      "id": 15
+    },
+    {
+      "courses": [
+        "C",
+        "C++"
+      ],
+      "phone": "123456",
+      "name": "Scott",
+      "location": "France",
+      "id": 16
+    },
+    {
+      "courses": [
+        "C",
+        "C++"
+      ],
+      "phone": "123456",
+      "name": "Scott",
+      "location": "France",
+      "id": 17
+    },
+    {
+      "courses": [
+        "C",
+        "C++"
+      ],
+      "phone": "123456",
+      "name": "Scott",
+      "location": "France",
+      "id": 18
+    },
+    {
+      "name": "Scott",
+      "location": "France",
+      "phone": "123456",
+      "cources": [
+        "C",
+        "C++"
+      ],
+      "id": 19
+    },
+    {
+      "name": "Scott",
+      "location": "France",
+      "phone": "123456",
+      "cources": [
+        "C",
+        "C++"
+      ],
+      "id": 20
+    },
+    {
+      "cources": [
+        "C",
+        "C++"
+      ],
+      "phone": "123456",
+      "name": "Scott",
+      "location": "France",
+      "id": 21
+    }
+  ]
+}

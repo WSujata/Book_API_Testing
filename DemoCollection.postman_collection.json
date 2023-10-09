@@ -1,0 +1,371 @@
+{
+	"info": {
+		"_postman_id": "450c9e89-d4ad-4009-9f6c-dbe7938c5f27",
+		"name": "DemoCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26708283"
+	},
+	"item": [
+		{
+			"name": "Get_Request",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://gorest.co.in/public/v2/users",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public",
+						"v2",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST_Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\":\"Jon\",\r\n\"job\": \"trainer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT_Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\":\"Jon\",\r\n\"job\": \"engineer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users/712",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"712"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE_Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users/712",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"712"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_Request_For_Google",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/Students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JsonSchemaValidation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/book",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ParsingXMLResponse",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://restapi.adequateshop.com/api/Traveler?page=1",
+					"protocol": "http",
+					"host": [
+						"restapi",
+						"adequateshop",
+						"com"
+					],
+					"path": [
+						"api",
+						"Traveler"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FileUpload",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "C:\\\\Users\\\\Admin\\\\Desktop\\\\Workspace\\\\API\\\\File.txt",
+					"protocol": "C",
+					"host": [
+						"Users"
+					],
+					"path": [
+						"",
+						"Admin",
+						"",
+						"Desktop",
+						"",
+						"Workspace",
+						"",
+						"API",
+						"",
+						"File.txt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "XMLSchemaValidation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://restapi.adequateshop.com/api/Traveler",
+					"protocol": "http",
+					"host": [
+						"restapi",
+						"adequateshop",
+						"com"
+					],
+					"path": [
+						"api",
+						"Traveler"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authentications",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/basic-auth",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"basic-auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BearerTokenAuth_Github",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://gorest.co.in/public/v2/users",
+			"request": {
+				"auth": {
+					"type": "apikey"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gorest.co.in/public/v2/users",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public",
+						"v2",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "\"https://postman-echo.com/basic-auth",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "postman",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/basic-auth",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"basic-auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://petstore.swagger.io/v2/user/#/user/createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/#/user/createUser",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						""
+					],
+					"hash": "/user/createUser"
+				}
+			},
+			"response": []
+		}
+	]
+}

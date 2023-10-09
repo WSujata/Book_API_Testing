@@ -1,0 +1,81 @@
+$ git init
+
+$ git status
+
+$ git add .
+
+$ git commit -m "Code For API Automation Framework"
+
+$   git config --global user.email "sujata.waghmare@genzsoln.com"
+  git config --global user.name "WSujata"
+
+$ git checkout -b MainBranch
+Switched to a new branch 'MainBranch'
+
+$ git status
+On branch MainBranch
+
+
+$ git push -u Sujata_API_Automation_Framework MainBranch
+
+$ git remote -v
+origin  https://github.com/genzsoln/Sujata_API_Automation_Framework.git (fetch)
+origin  https://github.com/genzsoln/Sujata_API_Automation_Framework.git (push)
+
+$ git add .
+
+$ git commit -m "Code For API Automation Framework"
+
+$ git push -u Sujata_API_Automation_Framework MainBranch
+
+$ git push --set-upstream origin MainBranch
+
+$ git push -u Sujata_API_Automation_Framework MainBranch
+
+$ git remote -v
+origin  https://github.com/genzsoln/Sujata_API_Automation_Framework.git (fetch)
+origin  https://github.com/genzsoln/Sujata_API_Automation_Framework.git (push)
+
+
+$ git status
+
+$ git remote get-url origin
+https://github.com/genzsoln/Sujata_API_Automation_Framework.git
+
+
+$ git branch -vv
+* MainBranch 02224b0 [origin/MainBranch] Code For API Automation Framework
+
+
+$ git push
+
+$ git push -u Sujata_API_Automation_Framework MainBranch
+
+$ git add .
+
+$ git commit -m "Code For API Automation Framework"
+On branch MainBranch
+Your branch is up to date with 'origin/MainBranch'.
+
+nothing to commit, working tree clean
+
+Admin@DESKTOP-VFU7UBS MINGW64 ~/Desktop/Workspace/Java Program/API_Automation_Framework (MainBranch)
+$ git remote -v
+origin  https://github.com/genzsoln/Sujata_API_Automation_Framework.git (fetch)
+origin  https://github.com/genzsoln/Sujata_API_Automation_Framework.git (push)
+
+
+$ git push -u Sujata_API_Automation_Framework MainBranch
+fatal: 'Sujata_API_Automation_Framework' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+
+$ git remote add origin https://github.com/genzsoln/Sujata_API_Automation_Framework.git
+
+
+Admin@DESKTOP-VFU7UBS MINGW64 ~/Desktop/Workspace/Java Program/API_Automation_Framework (MainBranch)
+$ git push -u Sujata_API_Automation_Framework MainBranch
+

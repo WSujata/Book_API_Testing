@@ -1,0 +1,47 @@
+{
+"students":[
+	{
+		"id":1,
+		"name":"John",
+		"location":"India",
+		"phone":"1234567890",
+		"cources":[
+			"java",
+			"Selenium"
+			]
+	},
+
+	{
+		"id":2,
+		"name":"kim",
+		"location":"US",
+		"phone":"3456789876",
+		"cources":[
+			"python",
+			"appium"
+			]
+	},
+
+	{
+		"id":3,
+		"name":"smith",
+		"location":"canada",
+		"phone":"9876543213",
+		"cources":[
+			"c#",
+			"RestAPI"
+			]
+	}
+	]
+}
+
+
+
+
+
+
+
+
+
+
+

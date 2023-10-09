@@ -1,0 +1,518 @@
+{
+	"info": {
+		"_postman_id": "ebe3c55b-19fb-40b9-a149-25f03b653b28",
+		"name": "Validation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26708283"
+	},
+	"item": [
+		{
+			"name": "Status_code",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Successful Get Request\", () => {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/Students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Headers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Content-Type header is present\", () => {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Content-Type header is application/json\", () => {\r",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json; charset=utf-8');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/Students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ALL_Validation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//For Status Code\r",
+							"pm.test(\"Status code is 200\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Successful Get Request\", () => {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+							"});\r",
+							"\r",
+							"//Header Validation\r",
+							"pm.test(\"Content-Type header is present\", () => {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Content-Type header is application/json\", () => {\r",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json; charset=utf-8');\r",
+							"});\r",
+							"\r",
+							"//Response Time\r",
+							"pm.test(\"response time is less than 200ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"//Cookies\r",
+							"pm.test(\"Cookie 'AEC' is present\", () => {\r",
+							"    pm.expect(pm.cookies.has('AEC')).to.be.true;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Cookies AEC has value 'en-gb'\", () => {\r",
+							"    pm.expect(pm.cookies.get('AEC')).to.eql('Ad49MVFnQK2APdwKG6dsHLrpHwa7zhtd6OH99ZedaQuh2cNC3A9nhN-Y3tY');\r",
+							"});\r",
+							"\r",
+							"//test array contents in body\r",
+							"\r",
+							"const jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Test array properties\", () => {\r",
+							"    //single array value validation\r",
+							"    pm.expect(jsonData.courses).to.include(\"java\");\r",
+							"\r",
+							"    // multiple array value validation\r",
+							"    pm.expect(jsonData.courses).to.have.members([\"java\", \"Selenium\"]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test data type of response\", () => {\r",
+							"    pm.expect(jsonData).to.be.an('object');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response should have the correct name\", () => {\r",
+							"    pm.expect(jsonData.name).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response should have the correct location\", () => {\r",
+							"    pm.expect(jsonData.id).to.be.a('number');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response should have the correct phone number\", () => {\r",
+							"    pm.expect(jsonData.phone).to.equal('1234567890');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response should have the correct courses\", () => {\r",
+							"    pm.expect(jsonData.courses).to.be.an('array');\r",
+							"});\r",
+							"\r",
+							"//json field/value response\r",
+							"\r",
+							"pm.test(\"Value of location field is India\", () => {\r",
+							"    pm.expect(jsonData.id).to.eql(1);\r",
+							"    pm.expect(jsonData.name).to.eql(\"John\");\r",
+							"    pm.expect(jsonData.phone).to.eql(\"1234567890\");\r",
+							"    pm.expect(jsonData.courses[0]).to.eql(\"java\");\r",
+							"    pm.expect(jsonData.courses[1]).to.eql(\"Selenium\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"// JSON Schema validation\r",
+							"var schema = {\r",
+							"  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\r",
+							"  \"title\": \"Generated schema for Root\",\r",
+							"  \"type\": \"object\",\r",
+							"  \"properties\": {\r",
+							"    \"id\": {\r",
+							"      \"type\": \"integer\" // Change \"number\" to \"integer\"\r",
+							"    },\r",
+							"    \"name\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"location\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"phone\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"courses\": {\r",
+							"      \"type\": \"array\",\r",
+							"      \"items\": {\r",
+							"        \"type\": \"string\"\r",
+							"      }\r",
+							"    }\r",
+							"  },\r",
+							"  \"required\": [\r",
+							"    \"id\",\r",
+							"    \"name\",\r",
+							"    \"location\",\r",
+							"    \"phone\",\r",
+							"    \"courses\"\r",
+							"  ]\r",
+							"};\r",
+							"\r",
+							"pm.test('Schema is valid', function() {\r",
+							"    pm.expect(tv4.validate(jsonData, schema)).to.be.true;\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/Students/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Students",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cookies",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Cookie 'AEC' is present\", () => {\r",
+							"    pm.expect(pm.cookies.has('AEC')).to.be.true;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Cookies AEC has value 'en-gb'\", () => {\r",
+							"    pm.expect(pm.cookies.get('AEC')).to.eql('Ad49MVFnQK2APdwKG6dsHLrpHwa7zhtd6OH99ZedaQuh2cNC3A9nhN-Y3tY');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.google.com/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"google",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Response Time",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"response time is less than 200ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/Students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Response Body",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Test data type of response\", () => {\r",
+							"    pm.expect(jsonData).to.be.an('object');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response should have the correct name\", () => {\r",
+							"    pm.expect(jsonData.name).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response should have the correct location\", () => {\r",
+							"    pm.expect(jsonData.id).to.be.a('number');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response should have the correct phone number\", () => {\r",
+							"    pm.expect(jsonData.phone).to.equal('1234567890');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response should have the correct courses\", () => {\r",
+							"    pm.expect(jsonData.courses).to.be.an('array');\r",
+							"});\r",
+							"\r",
+							"/*\r",
+							" \"\"id\": 1,\r",
+							"      \"name\": \"John\",\r",
+							"      \"location\": \"India\",\r",
+							"      \"phone\": \"1234567890\",\r",
+							"      \"courses\": [\r",
+							"        \"java\",\r",
+							"        \"Selenium\"\r",
+							"*/"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/Students/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Students",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Array Properties",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//test array contents in body\r",
+							"\r",
+							"const jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Test array properties\", () => {\r",
+							"    //single array value validation\r",
+							"    pm.expect(jsonData.courses).to.include(\"java\");\r",
+							"\r",
+							"    // multiple array value validation\r",
+							"    pm.expect(jsonData.courses).to.have.members([\"java\", \"Selenium\"]);\r",
+							"});\r",
+							"\r",
+							"/*\r",
+							" \"\"id\": 1,\r",
+							"      \"name\": \"John\",\r",
+							"      \"location\": \"India\",\r",
+							"      \"phone\": \"1234567890\",\r",
+							"      \"courses\": [\r",
+							"        \"java\",\r",
+							"        \"Selenium\"\r",
+							"*/\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/Students/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Students",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JSON field Response",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//json field/value response\r",
+							"\r",
+							"pm.test(\"Value of location field is India\", () => {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(1);\r",
+							"    pm.expect(jsonData.name).to.eql(\"John\");\r",
+							"    pm.expect(jsonData.phone).to.eql(\"1234567890\");\r",
+							"    pm.expect(jsonData.courses[0]).to.eql(\"java\");\r",
+							"    pm.expect(jsonData.courses[1]).to.eql(\"Selenium\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/Students/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Students",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JSON Schema",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// JSON Schema validation\r",
+							"var schema = {\r",
+							"  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\r",
+							"  \"title\": \"Generated schema for Root\",\r",
+							"  \"type\": \"object\",\r",
+							"  \"properties\": {\r",
+							"    \"id\": {\r",
+							"      \"type\": \"integer\" // Change \"number\" to \"integer\"\r",
+							"    },\r",
+							"    \"name\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"location\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"phone\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"courses\": {\r",
+							"      \"type\": \"array\",\r",
+							"      \"items\": {\r",
+							"        \"type\": \"string\"\r",
+							"      }\r",
+							"    }\r",
+							"  },\r",
+							"  \"required\": [\r",
+							"    \"id\",\r",
+							"    \"name\",\r",
+							"    \"location\",\r",
+							"    \"phone\",\r",
+							"    \"courses\"\r",
+							"  ]\r",
+							"};\r",
+							"\r",
+							"const jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test('Schema is valid', function() {\r",
+							"    pm.expect(tv4.validate(jsonData, schema)).to.be.true;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/Students/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Students",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

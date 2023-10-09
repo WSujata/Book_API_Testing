@@ -1,0 +1,42 @@
+{
+  "Students": [
+    {
+      "id": 2,
+      "name": "kim",
+      "location": "US",
+      "phone": "3456789876",
+      "courses": [
+        "python",
+        "appium"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "smith",
+      "location": "canada",
+      "phone": "9876543213",
+      "courses": [
+        "c#",
+        "RestAPI"
+      ]
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    }
+  ]
+}

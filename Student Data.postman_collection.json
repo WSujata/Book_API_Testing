@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "96c8ce98-ad26-4b26-a5f0-291285132744",
+		"name": "Student Data",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26708283"
+	},
+	"item": [
+		{
+			"name": "Get All Students Data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//For Status Code\r",
+							"pm.test(\"Status code is 200\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"//Header Validation\r",
+							"pm.test(\"Content-Type header is present\", () => {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Content-Type header is application/json\", () => {\r",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json; charset=utf-8');\r",
+							"});\r",
+							"\r",
+							"//Response Time\r",
+							"pm.test(\"response time is less than 200ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/Students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Student",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//For Status Code\r",
+							"pm.test(\"Status code is 201\", () => {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"    \r",
+							"//Header Validation\r",
+							"pm.test(\"Content-Type header is present\", () => {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Content-Type header is application/json\", () => {\r",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json; charset=utf-8');\r",
+							"});\r",
+							"\r",
+							"//Response Time\r",
+							"pm.test(\"response time is less than 200ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"/*\r",
+							"pm.test(\"Status code is 201\", () => {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body contains student ID\", () => {\r",
+							"    pm.response.to.have.jsonBody(\"id\");\r",
+							"});\r",
+							"*/"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n        \"name\": \"Sujata\",\r\n        \"location\": \"Dubai\",\r\n        \"phone\": \"1234567890\",\r\n        \"courses\": [\r\n            \"OOP\",\r\n            \"SQL\"\r\n        ]\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:3000/Students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Student",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//For Status Code\r",
+							"pm.test(\"Status code is 200\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"    \r",
+							"//Header Validation\r",
+							"pm.test(\"Content-Type header is present\", () => {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Content-Type header is application/json\", () => {\r",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json; charset=utf-8');\r",
+							"});\r",
+							"\r",
+							"//Response Time\r",
+							"pm.test(\"response time is less than 200ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"/*\r",
+							"pm.test(\"Response body contains updated student information\", () => {\r",
+							"    pm.response.to.have.jsonBody({\r",
+							"   {\r",
+							"       \"id\":7\r",
+							"        \"name\": \"Sujata\",\r",
+							"        \"location\": \"US\",\r",
+							"        \"phone\": \"1234567890\",\r",
+							"        \"courses\": [\r",
+							"            \"OOP\",\r",
+							"            \"SQL\"\r",
+							"        ]\r",
+							"    }\r",
+							"    });\r",
+							"});\r",
+							"*/"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n       \"id\":7\r\n        \"name\": \"Sujata\",\r\n        \"location\": \"US\",\r\n        \"phone\": \"1234567890\",\r\n        \"courses\": [\r\n            \"OOP\",\r\n            \"SQL\"\r\n        ]\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:3000/Students/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Students",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Student",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", () => {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"\r",
+							"//Header Validation\r",
+							"pm.test(\"Content-Type header is present\", () => {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Content-Type header is application/json\", () => {\r",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json; charset=utf-8');\r",
+							"});\r",
+							"\r",
+							"//Response Time\r",
+							"pm.test(\"response time is less than 200ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/Students/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Students",
+						"7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

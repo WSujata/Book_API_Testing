@@ -1,0 +1,60 @@
+{
+  "collection": {
+    "info": {
+      "name": "Student API Collection",
+      "description": "A collection of HTTP requests for the Student API"
+    },
+    "item": [
+      {
+        "name": "GET Students",
+        "request": {
+          "url": "http://localhost:3000/Student",
+          "method": "GET"
+        }
+      },
+      {
+        "name": "POST Create Student",
+        "request": {
+          "url": "http://localhost:3000/Student",
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"name\": \"smith\",\n  \"location\": \"canada\",\n  \"phone\": \"9876543213\",\n  \"courses\": [\n    \"c#\",\n    \"RestAPI\"\n  ]\n}"
+          }
+        }
+      },
+      {
+        "name": "PUT Update Student",
+        "request": {
+          "url": "http://localhost:3000/Student/4",
+          "method": "PUT",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"id\": 3,\n  \"name\": \"Sujata\",\n  \"location\": \"canada\",\n  \"phone\": \"9876543213\",\n  \"courses\": [\n    \"c#\",\n    \"RestAPI\"\n  ]\n}"
+          }
+        }
+      },
+      {
+        "name": "DELETE Student",
+        "request": {
+          "url": "http://localhost:3000/Student/4",
+          "method": "DELETE"
+        }
+      }
+    ]
+  }
+}
+
+

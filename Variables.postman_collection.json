@@ -1,0 +1,409 @@
+{
+	"info": {
+		"_postman_id": "9f4c10b5-6169-4856-9692-de48b5b74eae",
+		"name": "Variables",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26708283"
+	},
+	"item": [
+		{
+			"name": "global",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url_global}}/api/users?page=2",
+					"host": [
+						"{{url_global}}"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "collection",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url_collect}}/api/users?page=2",
+					"host": [
+						"{{url_collect}}"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Environment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url_dev_env}}/api/users?page=2",
+					"host": [
+						"{{url_dev_env}}"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"//local variable\r",
+							"pm.variables.set(\"url_local\",\"https://reqres.in\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url_local}}/api/users?page=2",
+					"host": [
+						"{{url_local}}"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ALL Variable Using Script",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"//local variable\r",
+							"pm.variables.set(\"url_local\",\"https://reqres.in\");\r",
+							"\r",
+							"//global variable\r",
+							"pm.globals.set(\"userid_global\",\"2\");\r",
+							"\r",
+							"//Environment Variable\r",
+							"pm.environment.set(\"userid_qa_env\",\"2\");\r",
+							"\r",
+							"//collection variable\r",
+							"pm.collectionVariables.set(\"userid_collect\",\"2\");\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url_local}}/api/users?page={{userid_global}}",
+					"host": [
+						"{{url_local}}"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "{{userid_global}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove All Variables",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"//local variable\r",
+							"pm.variables.set(\"url_local\",\"https://reqres.in\");\r",
+							"\r",
+							"//global variable\r",
+							"pm.globals.set(\"userid_global\",\"3\");\r",
+							"\r",
+							"//Environment Variable\r",
+							"pm.environment.set(\"userid_qa_env\",\"3\");\r",
+							"\r",
+							"//collection variable\r",
+							"pm.collectionVariables.set(\"userid_collect\",\"3\");\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//global variable\r",
+							"pm.globals.unset(\"userid_global\");\r",
+							"\r",
+							"//Environment Variable\r",
+							"pm.environment.unset(\"userid_qa_env\");\r",
+							"\r",
+							"//collection variable\r",
+							"pm.collectionVariables.unset(\"userid_collect\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url_local}}/api/users?page={{userid_global}}",
+					"host": [
+						"{{url_local}}"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "{{userid_global}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Value Of Variables",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"//local variable\r",
+							"pm.variables.set(\"url_local\",\"https://reqres.in\");\r",
+							"\r",
+							"//global variable\r",
+							"pm.globals.set(\"userid_global\",\"3\");\r",
+							"\r",
+							"//Environment Variable\r",
+							"pm.environment.set(\"userid_qa_env\",\"3\");\r",
+							"\r",
+							"//collection variable\r",
+							"pm.collectionVariables.set(\"userid_collect\",\"3\");\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Get Value Of Variables\r",
+							"console.log(pm.globals.get(\"userid_global\"));\r",
+							"console.log(pm.globals.get(\"userid_qa_env\"));\r",
+							"console.log(pm.globals.get(\"userid_collect\"));\r",
+							"console.log(pm.globals.get(\"url_local\"));\r",
+							"\r",
+							"//remove data from variable\r",
+							"//local variable\r",
+							"pm.variables.unset(\"url_local\");\r",
+							"\r",
+							"//global variable\r",
+							"pm.globals.unset(\"userid_global\");\r",
+							"\r",
+							"//Environment Variable\r",
+							"pm.environment.unset(\"userid_qa_env\");\r",
+							"\r",
+							"//collection variable\r",
+							"pm.collectionVariables.unset(\"userid_collect\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url_local}}/api/users?page={{userid_global}}",
+					"host": [
+						"{{url_local}}"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "{{userid_global}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url_collect}}/api/users?page=2",
+					"host": [
+						"{{url_collect}}"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url_collect",
+			"value": "https://reqres.in",
+			"type": "string"
+		},
+		{
+			"key": "userid_collect",
+			"value": ""
+		}
+	]
+}
